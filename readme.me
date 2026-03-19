@@ -1,11 +1,12 @@
 create folder such as toolbased
 open folder in terminal
 python -m venv venv
-venn/scripts/activate
+venv/scripts/activate
 pip install django
 python -m django --version
-django--admin startproject myapp
+django-admin startproject myapp
 cd myapp
+python manage.py runserver
 python manage.py migrate
 python manage.py makemigrations
-python manage.py runserver
+python manage.py createsuperuser

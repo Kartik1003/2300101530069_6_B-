@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back - Secure Login</title>
+    <meta name="description" content="Secure and beautiful login page experience.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo">
+                <i class="fa-solid fa-infinity"></i>
+            </div>
+            <h1>Welcome Back</h1>
+            <p>Please enter your details to sign in.</p>
+        </div>
+        
+        <form id="loginForm" class="login-form">
+            <div class="input-group">
+                <label for="email">Email address</label>
+                <div class="input-wrapper">
+                    <i class="fa-regular fa-envelope icon"></i>
+                    <input type="email" id="email" name="email" placeholder="name@company.com" required autocomplete="email">
+                </div>
+                <span class="error-message" id="emailError">Please enter a valid email address</span>
+            </div>
+            
+            <div class="input-group">
+                <div class="label-row">
+                    <label for="password">Password</label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock icon"></i>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                    <button type="button" class="password-toggle" id="togglePassword" aria-label="Toggle password visibility">
+                        <i class="fa-regular fa-eye" id="eyeIcon"></i>
+                    </button>
+                </div>
+                <span class="error-message" id="passwordError">Password is required</span>
+            </div>
+            
+            <div class="remember-me">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="remember">
+                    <span class="checkmark"></span>
+                    Remember for 30 days
+                </label>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-text">Sign In</span>
+                <span class="loader hidden"></span>
+            </button>
+            
+            <div class="social-login">
+                <p>Or continue with</p>
+                <div class="social-buttons">
+                    <button type="button" class="social-btn" aria-label="Sign in with Google">
+                        <i class="fa-brands fa-google"></i>
+                    </button>
+                    <button type="button" class="social-btn" aria-label="Sign in with GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </button>
+                    <button type="button" class="social-btn" aria-label="Sign in with Apple">
+                        <i class="fa-brands fa-apple"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        
+        <div class="login-footer">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+    </div>
+    
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
